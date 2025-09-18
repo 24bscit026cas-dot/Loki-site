@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Lokith</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin-bottom: 5px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff9800;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    #about, #projects, #contact {
+      background: #fff;
+      margin-top: 20px;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    #projects .project {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 4px solid #ff9800;
+      background: #fafafa;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 20px;
+    }
+    button {
+      background: #ff9800;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e68900;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <h1>Lokith's Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm <b>Lokith</b>, a passionate web developer who loves building creative and user-friendly websites.</p>
+  </section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Project One</h3>
+      <p>A simple responsive webpage created with HTML, CSS, and JS.</p>
+      <button onclick="showAlert('Project One')">View Details</button>
+    </div>
+    <div class="project">
+      <h3>Project Two</h3>
+      <p>A dynamic to-do list app using JavaScript.</p>
+      <button onclick="showAlert('Project Two')">View Details</button>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <label>Name:</label><br>
+      <input type="text" id="name" required><br><br>
+      <label>Email:</label><br>
+      <input type="email" id="email" required><br><br>
+      <label>Message:</label><br>
+      <textarea id="message" required></textarea><br><br>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 Lokith | All Rights Reserved</p>
+  </footer>
+
+
+  <script>
+    function showAlert(project) {
+      alert("You clicked on " + project + "!");
+    }
+
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+      alert("Thank you, " + name + "! Your message has been received.");
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+
+</body>
+</html>
